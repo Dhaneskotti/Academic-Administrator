@@ -1,0 +1,91 @@
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="page-title">Department Add</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item active">Dashboard</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <form class="gfg-div" [formGroup]="departmentForm" (ngSubmit)="onSubmit()">
+            <div class="gfg-logo"></div>
+            <div class="gfg-title mx-auto">{{action==='add'?'create':'Edit'}} Department</div>
+            <div class="input-field">
+                <div class=" row ">
+                    <div class="col-sm-12 col-md-5 px-3">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Department ID</mat-label>
+                            <input autocomplete="off" matInput placeholder="" formControlName="deptId" required>
+                            <mat-error *ngIf="submitted||UserNameControl.deptId.invalid && (UserNameControl.deptId.dirty || UserNameControl.deptId.touched)">
+                                <span *ngIf="UserNameControl.deptId.errors?.['required']" class="errmsg">
+                                    <small><span>Department ID is required</span><i class="fas fa-exclamation-circle ps-2"></i></small>
+                                  </span>
+                            </mat-error>
+                        </mat-form-field>    
+                     
+                    </div>
+                    <div class="col-sm-0 col-md-1"></div>
+                    <div class="col-sm-12 col-md-5 px-3">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Department Name</mat-label>
+                            <input autocomplete="off" matInput placeholder="" formControlName="deptName">
+                            <mat-error *ngIf="submitted||UserNameControl.deptName.invalid && (UserNameControl.deptName.dirty || UserNameControl.deptName.touched)">
+                                <span *ngIf="UserNameControl.deptName.errors?.['required']" class="errmsg">
+                                    <small><span>Department Name is required.</span><i class="fas fa-exclamation-circle ps-2"></i></small>
+                                  </span>
+                                <!-- <span *ngIf="UserNameControl.deptName.errors?.['minlength']" class="errmsg">
+                                    <small><span>Use 8+ char</span><i class="fas fa-exclamation-circle ps-2"></i></small>
+                                  </span> -->
+                            </mat-error>
+                        </mat-form-field>  
+                    </div>
+                    
+                    <div class="col-sm-12 col-md-5 px-3 form" >
+                        <mat-form-field appearance="outline">
+                            <mat-label>Head of Department</mat-label>
+                            <input autocomplete="off" matInput placeholder="" formControlName="hodName">
+                            <mat-error *ngIf="submitted||UserNameControl.hodName.invalid && (UserNameControl.hodName.dirty || UserNameControl.hodName.touched)">
+                                <span *ngIf="UserNameControl.hodName.errors?.['required']" class="errmsg">
+                                    <small><span>hodName is required</span><i class="fas fa-exclamation-circle ps-2"></i></small>
+                                  </span>   
+                            </mat-error>
+                        </mat-form-field>                          
+                    </div>
+                    <div class="col-sm-0 col-md-1"></div>
+                    <div class="col-sm-12 col-md-5 px-3">
+                        <mat-form-field appearance="outline">
+                            <mat-label>No of Student</mat-label>
+                            <input matInput placeholder="" formControlName="stud">
+                            <mat-error *ngIf="submitted||UserNameControl.stud.invalid && (UserNameControl.stud.dirty || UserNameControl.stud.touched)">
+                                <span *ngIf="UserNameControl.stud.errors?.['required']" class="errmsg">
+                                    <small><span>No of Student is required</span><i class="fas fa-exclamation-circle ps-2"></i></small>
+                                  </span>
+                                <span *ngIf="UserNameControl.stud.errors?.['pattern']" class="errmsg">
+                                    <small><span>Number Only</span><i class="fas fa-exclamation-circle ps-2"></i></small>
+                                  </span>
+                            </mat-error>
+                        </mat-form-field>  
+                    </div>
+                    
+                </div>
+                <!-- <div class=" row gfg-input-fields"> -->
+
+                <!-- </div> -->
+                
+            </div>
+            <div>
+                <button class="gfg-submit-btn my-4 me-5" type="submit">
+                    {{action === 'edit'?'Update':'Submit'}}</button>
+                    <button class="gfg-submit-btn2 my-4" type="button" (click)="closeModal()">
+                        Cancel</button>
+                    </div>
+            <br>
+
+            <!-- <pre>
+                {{UserName.value|json}}
+            </pre> -->
+
+        </form>
+        <!-- </div> -->
+        <br>

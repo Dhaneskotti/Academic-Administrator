@@ -1,0 +1,260 @@
+<div class="container admin-content">
+    <!-- <div class="admin-content"> -->
+    <div class=" d-flex justify-content-center mt-5">
+        <button class="gfg-button-creation mx-5" [class.gfg-button-creation-active]='adminbtn' (click)="admin()" (click)="toggleShowadmin()">admin</button>
+        <button class="gfg-button-creation mx-5" [class.gfg-button-creation-active]='studbtn' (click)="stud()" (click)="toggleShowstudent()">student</button>
+    </div>
+    <div class="main">
+        <div class="gfg-div">
+            <div class="gfg-logo"></div>
+            <div class="gfg-title">Create {{x}}</div>
+            <!-- <div class="gfg-sub-title">
+                    User Login
+                </div> -->
+            <div class="input-field">
+                <div class=" row gfg-input-fields" *ngIf="isShownAdmin">
+                    <div class="col-sm-12 col-md-6 gfg-text px-3">
+                        <div class="login-icon-frame">
+                            <div class="login-icon-btn">
+                                <i class="fas fa-user" style="color: #3b5998;"></i>
+                            </div>
+                            <input type="text" placeholder="Firstname" />
+                        </div>
+                    </div>
+                    <div class="col -sm-12 col-md-6 gfg-text px-3">
+                        <div class="login-icon-frame">
+                            <div class="login-icon-btn">
+                                <i class="fas fa-lock" style="color: #3b5998;"></i>
+                            </div>
+                            <input type="text" placeholder="Lastname" />
+                        </div>
+                    </div>
+                    <div class="col -sm-12 col-md-6 gfg-text px-3">
+                        <div class="login-icon-frame">
+                            <div class="login-icon-btn">
+                                <i class="fas fa-lock" style="color: #3b5998;"></i>
+                            </div>
+                            <input type="text" placeholder="Username" />
+                        </div>
+                    </div>
+                    <div class="col -sm-12 col-md-6 gfg-password px-3">
+                        <div class="login-icon-frame">
+                            <div class="login-icon-btn">
+                                <i class="fas fa-lock" style="color: #3b5998;"></i>
+                            </div>
+                            <input type="password" placeholder="password" />
+                        </div>
+                    </div>
+                    <div class="col -sm-12 col-md-6 gfg-text px-3">
+                        <div class="login-icon-frame">
+                            <div class="login-icon-btn">
+                                <i class="fas fa-lock" style="color: #3b5998;"></i>
+                            </div>
+                            <input type="number" placeholder="Mobile" />
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 gfg-email px-3">
+                        <div class="login-icon-frame">
+                            <div class="login-icon-btn">
+                                <i class="fas fa-user" style="color: #3b5998;"></i>
+                            </div>
+                            <input type="email" placeholder="E-mail" />
+                        </div>
+                    </div>
+                    <div class="col -sm-12 col-md-6 gfg-text px-3">
+                        <div class="login-icon-frame">
+                            <div class="login-icon-btn">
+                                <i class="fas fa-lock" style="color: #3b5998;"></i>
+                            </div>
+                            <input type="text" placeholder="D.O.B" />
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 gfg-text px-3">
+                        <div class="login-icon-frame">
+                            <div class="login-icon-btn">
+                                <i class="fas fa-lock" style="color: #3b5998;"></i>
+                            </div>
+                            <input type="text" placeholder="Address" />
+                        </div>
+                    </div>
+                    <div class="col -sm-12 col-md-6 gfg-text px-3">
+                        <div class="login-icon-frame">
+                            <div class="login-icon-btn">
+                                <i class="fas fa-lock" style="color: #3b5998;"></i>
+                            </div>
+                            <input type="text" placeholder="City" />
+                        </div>
+                    </div>
+                    <div class="col -sm-12 col-md-6 gfg-text px-3">
+                        <div class="login-icon-frame">
+                            <div class="login-icon-btn">
+                                <i class="fas fa-lock" style="color: #3b5998;"></i>
+                            </div>
+                            <input type="text" placeholder="State" />
+                        </div>
+                    </div>
+                    <div class="col -sm-12 col-md-6 gfg-text px-3">
+                        <div class="login-icon-frame">
+                            <div class="login-icon-btn">
+                                <i class="fas fa-lock" style="color: #3b5998;"></i>
+                            </div>
+                            <input type="number" placeholder="Zip-Code" />
+                        </div>
+                    </div>
+                    <div class="col -sm-12 col-md-6 gfg-text px-3">
+                        <div class="login-icon-frame">
+                            <div class="login-icon-btn">
+                                <i class="fas fa-lock" style="color: #3b5998;"></i>
+                            </div>
+                            <input type="number" placeholder="country" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class=" row gfg-input-fields" *ngIf="isShownStud">
+                    <div class="col-sm-12 col-md-6 gfg-text px-3">
+                        <div class="login-icon-frame">
+                            <div class="login-icon-btn">
+                                <i class="fas fa-user" style="color: #3b5998;"></i>
+                            </div>
+                            <input type="text" placeholder="Firstname" />
+                        </div>
+                    </div>
+                    <div class="col -sm-12 col-md-6 gfg-text px-3">
+                        <div class="login-icon-frame">
+                            <div class="login-icon-btn">
+                                <i class="fas fa-lock" style="color: #3b5998;"></i>
+                            </div>
+                            <input type="text" placeholder="Lastname" />
+                        </div>
+                    </div>
+                    <div class="col -sm-12 col-md-6 gfg-text px-3">
+                        <div class="login-icon-frame">
+                            <div class="login-icon-btn">
+                                <i class="fas fa-lock" style="color: #3b5998;"></i>
+                            </div>
+                            <input type="text" placeholder="Username" />
+                        </div>
+                    </div>
+                    <div class="col -sm-12 col-md-6 gfg-password px-3">
+                        <div class="login-icon-frame">
+                            <div class="login-icon-btn">
+                                <i class="fas fa-lock" style="color: #3b5998;"></i>
+                            </div>
+                            <input type="password" placeholder="password" />
+                        </div>
+                    </div>
+                    <div class="col -sm-12 col-md-6 gfg-text px-3">
+                        <div class="login-icon-frame">
+                            <div class="login-icon-btn">
+                                <i class="fas fa-lock" style="color: #3b5998;"></i>
+                            </div>
+                            <input type="text" placeholder="RegisterNo" />
+                        </div>
+                    </div>
+
+                    <div class="col -sm-12 col-md-6 gfg-text px-3">
+                        <div class="login-icon-frame">
+                            <div class="login-icon-btn">
+                                <i class="fas fa-lock" style="color: #3b5998;"></i>
+                            </div>
+                            <input type="text" placeholder="Dept Branch" />
+                        </div>
+                    </div>
+                    <div class="col -sm-12 col-md-6 gfg-text px-3">
+                        <div class="login-icon-frame">
+                            <div class="login-icon-btn">
+                                <i class="fas fa-lock" style="color: #3b5998;"></i>
+                            </div>
+                            <input type="number" placeholder="Mobile" />
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 gfg-email px-3">
+                        <div class="login-icon-frame">
+                            <div class="login-icon-btn">
+                                <i class="fas fa-user" style="color: #3b5998;"></i>
+                            </div>
+                            <input type="email" placeholder="E-mail" />
+                        </div>
+                    </div>
+                    <div class="col -sm-12 col-md-6 gfg-text px-3">
+                        <div class="login-icon-frame">
+                            <div class="login-icon-btn">
+                                <i class="fas fa-lock" style="color: #3b5998;"></i>
+                            </div>
+                            <input type="text" placeholder="D.O.B" />
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 gfg-text px-3">
+                        <div class="login-icon-frame">
+                            <div class="login-icon-btn">
+                                <i class="fas fa-lock" style="color: #3b5998;"></i>
+                            </div>
+                            <input type="text" placeholder="Address" />
+                        </div>
+                    </div>
+                    <div class="col -sm-12 col-md-6 gfg-text px-3">
+                        <div class="login-icon-frame">
+                            <div class="login-icon-btn">
+                                <i class="fas fa-lock" style="color: #3b5998;"></i>
+                            </div>
+                            <input type="text" placeholder="City" />
+                        </div>
+                    </div>
+                    <div class="col -sm-12 col-md-6 gfg-text px-3">
+                        <div class="login-icon-frame">
+                            <div class="login-icon-btn">
+                                <i class="fas fa-lock" style="color: #3b5998;"></i>
+                            </div>
+                            <input type="text" placeholder="State" />
+                        </div>
+                    </div>
+                    <div class="col -sm-12 col-md-6 gfg-text px-3">
+                        <div class="login-icon-frame">
+                            <div class="login-icon-btn">
+                                <i class="fas fa-lock" style="color: #3b5998;"></i>
+                            </div>
+                            <input type="number" placeholder="Zip-Code" />
+                        </div>
+                    </div>
+                    <div class="col -sm-12 col-md-6 gfg-text px-3">
+                        <div class="login-icon-frame">
+                            <div class="login-icon-btn">
+                                <i class="fas fa-lock" style="color: #3b5998;"></i>
+                            </div>
+                            <input type="number" placeholder="country" />
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- <div class=" row gfg-input-fields"> -->
+
+                <!-- </div> -->
+                <div class="radio row ">
+                    <div class="mt-2 me-2 col-sm-12">
+                        <h3>Gender</h3>
+                    </div>
+                    <div class="wrapper me-3 col-4">
+                        <input class="state" type="radio" name="app" id="a" value="a" checked>
+                        <label class="label" for="a">
+                            <div class="indicator"></div>
+                            <span class="text">Male</span>
+                          </label>
+                    </div>
+                    <div class="wrapper col-4">
+                        <input class="state" type="radio" name="app" id="b" value="b">
+                        <label class="label" for="b">
+                            <div class="indicator"></div>
+                            <span class="text">Female</span>
+                          </label>
+                    </div>
+                </div>
+            </div>
+            <button class="gfg-submit-btn my-4">
+                    Submit</button>
+            <br>
+
+        </div>
+    </div>
+    <!-- </div> -->
+</div>

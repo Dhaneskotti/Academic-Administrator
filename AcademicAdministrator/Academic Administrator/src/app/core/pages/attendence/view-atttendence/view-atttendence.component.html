@@ -1,0 +1,58 @@
+<div class="page-wrapper">
+    <div class="content container-fluid">
+
+        <div class="page-header">
+            <h4>View Attendence</h4>
+            <!-- <ul class="breadcrumb">
+                <li class="breadcrumb-item active">Dashboard/Students</li>
+            </ul> -->
+            <!-- <mat-form-field appearance="fill" class="example-full-width">
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker" (dateInput)="getDate($event)">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker touchUi #picker></mat-datepicker>
+            </mat-form-field>    -->
+            
+            <mat-form-field appearance="fill" class="example-full-width drop">
+                <mat-label>Department</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let a of Dept" [value]="a.dept">
+                    {{a.dept}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="example-full-width drop">
+                    <mat-label>Year</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let y of Year" [value]="y.year">
+                        {{y.year}}
+                        </mat-option>
+                    </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="sectionOne">
+
+            <h6 class="mb-4">Attendence Sheet</h6>
+
+            <div class="sectionOne-header">
+                <mat-form-field appearance="fill" class="example-full-width" style="width: 500px;">
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput [matDatepicker]="picker" (dateInput)="getDate($event)">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker touchUi #picker></mat-datepicker>
+                </mat-form-field>
+    
+    
+                  <!-- <h4>{{event}}</h4> -->
+    
+                  <button mat-raised-button color="primary" class="ms-5 px-5 py-1">Search</button>
+            </div>
+            
+        </div>
+
+        <br>
+
+    </div>
+</div>

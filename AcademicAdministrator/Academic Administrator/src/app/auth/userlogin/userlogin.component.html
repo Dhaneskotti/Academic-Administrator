@@ -1,0 +1,103 @@
+<div class="section-One">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6 left">
+                <div class="color"></div>
+            </div>
+            <div class="col-6 right">
+                <h4 class="admin">
+                    {{ action === "admin" ? "AdminLogin" : "StudentLogin" }}
+                </h4>
+                <h4 class="admin-text">
+                    Welcome to {{ action === "admin" ? "Admin" : "Student" }}
+                </h4>
+                <div class="btn-row">
+                    <button [ngClass]="{ 'btn-active': action == 'admin' }" (click)="admin()" class="btn-grad-admin"
+                        type="button">
+                        Admin
+                    </button>
+                    <button [ngClass]="{ 'btn-active': action == 'stud' }" (click)="stud()" class="btn-grad-student"
+                        type="button">
+                        Student
+                    </button>
+                </div>
+                <div class="img img-fluid">
+                    <img src="{{ img }}" class="img-fluid" alt="Instagram Logo" />
+                </div>
+                <!-- <form class="login-form"> -->
+                <!-- <small> -->
+                <form *ngIf="action=='admin'" [formGroup]="adminLogin">
+                    <mat-form-field class="mb-2" style="transform: scale(1.2)">
+                        <mat-label class="text-dark">Admin ID</mat-label>
+                        <input autocomplete="off" matInput placeholder="" formControlName="adminID" name="adminID" />
+                        <mat-error *ngIf="
+                                  submitted ||
+                                  (adminLogincontrols.adminID.invalid &&
+                                    (adminLogincontrols.adminID.dirty ||
+                                      adminLogincontrols.adminID.touched))
+                                ">
+                            <span *ngIf="adminLogincontrols.adminID.errors?.['required']">
+                                Admin Id is required.
+                            </span>
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field style="transform: scale(1.2)">
+                        <mat-label class="text-dark">password</mat-label>
+                        <input autocomplete="off" matInput type="password" placeholder="" formControlName="password" />
+                        <mat-error *ngIf="
+                                  submitted ||
+                                  (adminLogincontrols.password.invalid &&
+                                    (adminLogincontrols.password.dirty ||
+                                      adminLogincontrols.password.touched))
+                                ">
+                            <span *ngIf="adminLogincontrols.password.errors?.['required']">
+                                Password is required.
+                            </span>
+                        </mat-error>
+                    </mat-form-field>
+                    <!-- </small> -->
+                    <button (click)="login()" class="btn-grad mt-4" type="submit">
+                        Log In &nbsp;&nbsp;&nbsp;&nbsp;
+                        <i class="fas fa-sign-in"></i>
+                    </button>
+                </form>
+                <form *ngIf="action=='stud'" [formGroup]="studLogin">
+                    <mat-form-field class="mb-2" style="transform: scale(1.2)">
+                        <mat-label class="text-dark">Register NO</mat-label>
+                        <input autocomplete="off" matInput placeholder="" formControlName='registerno'
+                            name="registerno" />
+                        <!-- <mat-error *ngIf="
+                                  submitted ||
+                                  (adminLogincontrols.adminID.invalid &&
+                                    (adminLogincontrols.adminID.dirty ||
+                                      adminLogincontrols.adminID.touched))
+                                ">
+                            <span *ngIf="adminLogincontrols.adminID.errors?.['required']">
+                                Admin Id is required.
+                            </span>
+                        </mat-error> -->
+                    </mat-form-field>
+                    <mat-form-field style="transform: scale(1.2)">
+                        <mat-label class="text-dark">password</mat-label>
+                        <input autocomplete="off" matInput type="password" formControlName="studPass" placeholder="" />
+                        <!-- <mat-error *ngIf="
+                                  submitted ||
+                                  (adminLogincontrols.password.invalid &&
+                                    (adminLogincontrols.password.dirty ||
+                                      adminLogincontrols.password.touched))
+                                ">
+                            <span *ngIf="adminLogincontrols.password.errors?.['required']">
+                                Password is required.
+                            </span>
+                        </mat-error> -->
+                    </mat-form-field>
+                    <!-- </small> -->
+                    <button (click)="loginStud()" class="btn-grad mt-4">
+                        Log In &nbsp;&nbsp;&nbsp;&nbsp;
+                        <i class="fas fa-sign-in"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

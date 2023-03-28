@@ -1,0 +1,83 @@
+<div class="page-wrapper">
+  <div class="content container-fluid">
+
+    <div class="page-header">
+      <h3>View Event</h3>
+    </div>
+    <div class="sectionOne">
+      <div class="sectionOneContent">
+        <h6 class="mb-4">Event</h6>
+        <div class="sectionOne-header">
+          <h4>Today is your opportunity <br><span>to build
+              the tomorrow you want...
+            </span> </h4>
+        </div>
+      </div>
+
+    </div>
+    <br>
+    <div class="sectionTwo p-2 p-sm-4 mx-auto col-12 col-md-10" *ngIf="eventData.length>0">
+      <div class="card mb-3 mx-auto col-12 h-auto" *ngFor="let event of eventData; index as i">
+        <div class="row p-0 m-0 g-0">
+          <div class="col-md-4 cardImgDiv">
+            <img [src]=cardImg class="img-fluid rounded-start h-100 w-100" alt="Event Image">
+          </div>
+          <div class="col-md-8 h-0">
+            <div class="card-body px-3 py-0">
+              <h6 class="card-title my-3">
+                {{event.eventName}}
+                &nbsp;
+                <span class="badge bg-danger">New</span>
+              </h6>
+              <p class="card-text desc" [innerHtml]="event.eventDesc"></p>
+              <p class="card-text date d-flex justify-content-md-between align-items-center mb-2">
+                <button mat-raised-button class="px-md-4 px-2 text-center read-more" data-bs-toggle="modal"
+                  data-bs-target="#exampleModal">Read <span class="d-none d-sm-inline-block">More</span></button>
+                <small class="text-muted ps-2">{{event.eventDate}}</small>
+              </p>
+
+              <div class="modal fade" id="exampleModal" tabindex="-1">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">{{event.eventName}}</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>&nbsp;
+                    </div>
+                    <div class="modal-body" [innerHtml]="event.eventDesc">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-grid gap-3 d-flex  justify-content-md-end mb-3">
+                <button mat-raised-button color="primary" class=" px-md-2  edit">
+                  <span>
+                    <i class="fas fa-edit pe-sm-2 pe-0 mx-auto"></i>
+                  </span>
+                  <span class="d-none d-sm-inline-block">
+                    Edit
+                  </span>
+                </button>
+
+                <button mat-raised-button color="primary" class=" px-md-2 delete" (click)="delete(event)">
+                  <span>
+                    <i class="fas fa-trash-alt pe-sm-2 pe-0 mx-auto"></i>
+                  </span>
+                  <span class="d-none d-sm-inline-block">
+                    Delete
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+  </div>
+</div>

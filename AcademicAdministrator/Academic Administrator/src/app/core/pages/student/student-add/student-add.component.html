@@ -1,0 +1,431 @@
+<form class="gfg-div" [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+    <div class="gfg-logo"></div>
+    <div class="gfg-title mx-auto">
+        {{ action === "add" ? "Create" : "Edit" }} Student
+    </div>
+    <div class="input-field">
+        <div class="row form">
+            <div class="col-sm-12 col-md-5 px-3">
+                <mat-form-field appearance="outline">
+                    <mat-label>Firstname</mat-label>
+                    <input autocomplete="off" matInput placeholder="" formControlName="firstName" required />
+                    <mat-error *ngIf="
+              submitted ||
+              (studentFormControl.firstName.invalid &&
+                (studentFormControl.firstName.dirty ||
+                  studentFormControl.firstName.touched))
+            ">
+                        <span *ngIf="studentFormControl.firstName.errors?.['required']" class="errmsg">
+                            <small><span>Firstname is required.</span><i
+                                    class="fas fa-exclamation-circle ps-2"></i></small>
+                        </span>
+                        <span *ngIf="  studentFormControl.firstName.errors?.['minlength']" class="errmsg">
+                            <small><span>Use 4+ Char</span><i class="fas fa-exclamation-circle ps-2"></i></small>
+                        </span>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-0 col-md-1"></div>
+            <div class="col-sm-12 col-md-5 px-3">
+                <mat-form-field appearance="outline">
+                    <mat-label>Lastname</mat-label>
+                    <input autocomplete="off" matInput placeholder="" formControlName="lastName" />
+                </mat-form-field>
+            </div>
+            <div class="col-sm-12 col-md-5 px-3">
+                <mat-form-field appearance="outline">
+                    <mat-label>Fathername</mat-label>
+                    <input autocomplete="off" matInput placeholder="" formControlName="fatherName" required />
+                    <mat-error *ngIf="
+              submitted ||
+              (studentFormControl.fatherName.invalid &&
+                (studentFormControl.fatherName.dirty ||
+                  studentFormControl.fatherName.touched))
+            ">
+                        <span *ngIf="studentFormControl.fatherName.errors?.['required']" class="errmsg">
+                            <small><span>FatherName is required.</span><i
+                                    class="fas fa-exclamation-circle ps-2"></i></small>
+                        </span>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-0 col-md-1"></div>
+            <div class="col-sm-12 col-md-5 px-3">
+                <mat-form-field appearance="outline">
+                    <mat-label>mothername</mat-label>
+                    <input autocomplete="off" matInput placeholder="" formControlName="motherName" />
+                    <mat-error *ngIf="
+                                  submitted ||
+                                  (studentFormControl.motherName.invalid &&
+                                    (studentFormControl.motherName.dirty ||
+                                      studentFormControl.motherName.touched))
+                                ">
+                        <span *ngIf="studentFormControl.motherName.errors?.['required']" class="errmsg">
+                            <small><span>MotherName is required.</span><i
+                                    class="fas fa-exclamation-circle ps-2"></i></small>
+                        </span>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-12 col-md-5 px-3">
+                <mat-form-field appearance="outline">
+                    <mat-label>FatherOccupation</mat-label>
+                    <input autocomplete="off" matInput placeholder="" formControlName="fatherOccupation" required />
+                    <mat-error *ngIf="
+              submitted ||
+              (studentFormControl.fatherOccupation.invalid &&
+                (studentFormControl.fatherOccupation.dirty ||
+                  studentFormControl.fatherOccupation.touched))
+            ">
+                        <span *ngIf="studentFormControl.fatherOccupation.errors?.['required']" class="errmsg">
+                            <small><span>fatherOccupation is required.</span><i
+                                    class="fas fa-exclamation-circle ps-2"></i></small>
+                        </span>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-0 col-md-1"></div>
+            <div class="col-sm-12 col-md-5 px-3">
+                <mat-form-field appearance="outline">
+                    <mat-label>MotherOccupation</mat-label>
+                    <input autocomplete="off" matInput placeholder="" formControlName="motherOccupation" />
+                    <mat-error *ngIf="
+                                  submitted ||
+                                  (studentFormControl.motherOccupation.invalid &&
+                                    (studentFormControl.motherOccupation.dirty ||
+                                      studentFormControl.motherOccupation.touched))
+                                ">
+                        <span *ngIf="studentFormControl.motherOccupation.errors?.['required']" class="errmsg">
+                            <small><span>MotherOccupation is required.</span><i
+                                    class="fas fa-exclamation-circle ps-2"></i></small>
+                        </span>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-12 col-md-5 px-3">
+                <mat-form-field appearance="outline">
+                    <mat-label>FatherMobile</mat-label>
+                    <input autocomplete="off" matInput placeholder="" formControlName="fatherMobile" required />
+                    <mat-error *ngIf="
+              submitted ||
+              (studentFormControl.fatherMobile.invalid &&
+                (studentFormControl.fatherMobile.dirty ||
+                  studentFormControl.fatherMobile.touched))
+            ">
+                        <span *ngIf="studentFormControl.fatherMobile.errors?.['required']" class="errmsg">
+                            <small><span>fatherMobile is required.</span><i
+                                    class="fas fa-exclamation-circle ps-2"></i></small>
+                        </span>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-0 col-md-1"></div>
+            <div class="col-sm-12 col-md-5 px-3">
+                <mat-form-field appearance="outline">
+                    <mat-label>MotherMobile</mat-label>
+                    <input autocomplete="off" matInput placeholder="" formControlName="motherMobile" />
+                    <mat-error *ngIf="
+                                  submitted ||
+                                  (studentFormControl.motherMobile.invalid &&
+                                    (studentFormControl.motherMobile.dirty ||
+                                      studentFormControl.motherMobile.touched))
+                                ">
+                        <span *ngIf="studentFormControl.motherMobile.errors?.['required']" class="errmsg">
+                            <small><span>motherMobile is required.</span><i
+                                    class="fas fa-exclamation-circle ps-2"></i></small>
+                        </span>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-12 col-md-5 px-3">
+                <mat-form-field appearance="outline">
+                    <mat-label>Username</mat-label>
+                    <input autocomplete="off" matInput placeholder="" formControlName="username" required />
+                    <mat-error *ngIf="
+              submitted ||
+              (studentFormControl.username.invalid &&
+                (studentFormControl.username.dirty ||
+                  studentFormControl.username.touched))
+            ">
+                        <span *ngIf="studentFormControl.username.errors?.['required']" class="errmsg">
+                            <small><span>Username is required.</span><i
+                                    class="fas fa-exclamation-circle ps-2"></i></small>
+                        </span>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-0 col-md-1"></div>
+            <div class="col-sm-12 col-md-5 px-3">
+                <mat-form-field appearance="outline">
+                    <mat-label>password</mat-label>
+                    <input autocomplete="off" matInput placeholder="" formControlName="password" />
+                    <mat-error *ngIf="
+              submitted ||
+              (studentFormControl.password.invalid &&
+                (studentFormControl.password.dirty ||
+                  studentFormControl.password.touched))
+            ">
+                        <span *ngIf="studentFormControl.password.errors?.['required']" class="errmsg">
+                            <small><span>Password is required.</span><i
+                                    class="fas fa-exclamation-circle ps-2"></i></small>
+                        </span>
+                        <span *ngIf="studentFormControl.password.errors?.['minlength']" class="errmsg">
+                            <small><span>Use 8+ char</span><i class="fas fa-exclamation-circle ps-2"></i></small>
+                        </span>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-12 col-md-5 px-3">
+                <mat-form-field appearance="outline">
+                    <mat-label>RegisterNo</mat-label>
+                    <input autocomplete="off" matInput placeholder="" formControlName="registerno" />
+                    <mat-error *ngIf="
+              submitted ||
+              (studentFormControl.registerno.invalid &&
+                (studentFormControl.registerno.dirty ||
+                  studentFormControl.registerno.touched))
+            "><span *ngIf="studentFormControl.registerno.errors?.['required']" class="errmsg">
+                            <small><span>registerno is required</span><i
+                                    class="fas fa-exclamation-circle ps-2"></i></small>
+                        </span>
+                        <span *ngIf="studentFormControl.registerno.errors?.['pattern']" class="errmsg">
+                            <small><span>Number Only</span><i class="fas fa-exclamation-circle ps-2"></i></small>
+                        </span></mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-0 col-md-1"></div>
+            <div class="col-sm-12 col-md-5 px-3">
+                <!-- <mat-form-field appearance="outline">
+                    <mat-label>Dept Branch</mat-label>
+                    <input autocomplete="off" matInput placeholder="" formControlName="deptbranch" />
+                    <mat-error *ngIf="
+              submitted ||
+              (studentFormControl.deptbranch.invalid &&
+                (studentFormControl.deptbranch.dirty ||
+                  studentFormControl.deptbranch.touched))
+            "><span *ngIf="studentFormControl.deptbranch.errors?.['required']" class="errmsg">
+                            <small><span>deptbranch is required</span><i
+                                    class="fas fa-exclamation-circle ps-2"></i></small> </span></mat-error>
+                </mat-form-field> -->
+                <select class="select" id="cars" name="cars" formControlName="deptbranch">
+                    <option value="" disabled selected>Department</option>
+                    <option *ngFor="let a of Dept" [value]="a.dept">{{a.dept}}</option>
+                    <div *ngIf="
+                                  submitted ||
+                                  (studentFormControl.deptbranch.invalid &&
+                                    (studentFormControl.deptbranch.dirty ||
+                                      studentFormControl.deptbranch.touched))
+                                "><span *ngIf="studentFormControl.deptbranch.errors?.['required']" class="errmsg">
+                            <small><span>deptbranch is required</span><i
+                                    class="fas fa-exclamation-circle ps-2"></i></small>
+                        </span></div>
+                </select>
+            </div>
+            <div class="col-sm-12 col-md-5 px-3">
+                <mat-form-field appearance="outline">
+                    <mat-label>Mobile</mat-label>
+                    <input autocomplete="off" matInput placeholder="" formControlName="mobile" />
+                    <mat-error *ngIf="
+              submitted ||
+              (studentFormControl.mobile.invalid &&
+                (studentFormControl.mobile.dirty ||
+                  studentFormControl.mobile.touched))
+            " class="d-flex justify-content-evenly align-items-center">
+                        <span *ngIf="studentFormControl.mobile.errors?.['required']" class="errmsg">
+                            <small><span>MobileNo required</span><i class="fas fa-exclamation-circle ps-2"></i></small>
+                        </span>
+                        <span *ngIf="studentFormControl.mobile.errors?.['pattern']" class="errmsg">
+                            <small><span>Number Only</span><i class="fas fa-exclamation-circle ps-2"></i></small>
+                        </span>
+                        <span *ngIf="studentFormControl.mobile.errors?.['minlength']" class="errmsg">
+                            <small><span>Use 10 no</span><i class="fas fa-exclamation-circle ps-2"></i></small>
+                        </span>
+                        <span *ngIf="studentFormControl.mobile.errors?.['maxlength']" class="errmsg">
+                            <small><span>DontUse 10+ no</span><i class="fas fa-exclamation-circle ps-2"></i></small>
+                        </span>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-0 col-md-1"></div>
+            <div class="col-sm-12 col-md-5 px-3">
+                <mat-form-field appearance="outline">
+                    <mat-label>E-mail</mat-label>
+                    <input autocomplete="off" matInput placeholder="" formControlName="email" />
+                    <mat-error *ngIf="
+              submitted ||
+              (studentFormControl.email.invalid &&
+                (studentFormControl.email.dirty ||
+                  studentFormControl.email.touched))
+            ">
+                        <span *ngIf="studentFormControl.email.errors?.['required']" class="errmsg">
+                            <small><span>E-mail is required</span><i class="fas fa-exclamation-circle ps-2"></i></small>
+                        </span>
+                        <span *ngIf="studentFormControl.email.errors?.['email']" class="errmsg">
+                            <small><span>Enter valid E-mail</span><i class="fas fa-exclamation-circle ps-2"></i></small>
+                        </span>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-12 col-md-5 px-3">
+                <mat-form-field appearance="outline">
+                    <mat-label>D.O.B</mat-label>
+                    <input autocomplete="off" matInput placeholder="" formControlName="dob" (input)="onDob()" />
+                    <mat-error *ngIf="
+              submitted ||
+              (studentFormControl.dob.invalid &&
+                (studentFormControl.dob.dirty ||
+                  studentFormControl.dob.touched))
+            ">
+                        <span *ngIf="studentFormControl.dob.errors?.['required']" class="errmsg">
+                            <small><span>dob is required</span><i class="fas fa-exclamation-circle ps-2"></i></small>
+                        </span>
+                        <span *ngIf="studentFormControl.dob.errors?.['minlength']" class="errmsg">
+                            <small><span>Use 8+ Num</span><i class="fas fa-exclamation-circle ps-2"></i></small>
+                        </span>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-0 col-md-1"></div>
+            <div class="col-sm-12 col-md-5 px-3">
+                <mat-form-field appearance="outline">
+                    <mat-label>Address</mat-label>
+                    <input autocomplete="off" matInput placeholder="" formControlName="address" />
+                    <mat-error *ngIf="
+              submitted ||
+              (studentFormControl.address.invalid &&
+                (studentFormControl.address.dirty ||
+                  studentFormControl.address.touched))
+            ">
+                        <span *ngIf="studentFormControl.address.errors?.['required']" class="errmsg">
+                            <small><span>address is required</span><i
+                                    class="fas fa-exclamation-circle ps-2"></i></small>
+                        </span>
+                        <span *ngIf="studentFormControl.address.errors?.['minlength']" class="errmsg">
+                            <small><span>Use 10+ char</span><i class="fas fa-exclamation-circle ps-2"></i></small>
+                        </span>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-12 col-md-5 px-3 form">
+                <mat-form-field appearance="outline">
+                    <mat-label>City</mat-label>
+                    <input autocomplete="off" matInput placeholder="" formControlName="city" />
+                    <mat-error *ngIf="
+              submitted ||
+              (studentFormControl.city.invalid &&
+                (studentFormControl.city.dirty ||
+                  studentFormControl.city.touched))
+            ">
+                        <span *ngIf="studentFormControl.city.errors?.['required']" class="errmsg">
+                            <small><span>city is required</span><i class="fas fa-exclamation-circle ps-2"></i></small>
+                        </span>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-0 col-md-1"></div>
+            <div class="col-sm-12 col-md-5 px-3">
+                <mat-form-field appearance="outline">
+                    <mat-label>State</mat-label>
+                    <input matInput placeholder="" formControlName="state" />
+                    <mat-error *ngIf="
+              submitted ||
+              (studentFormControl.state.invalid &&
+                (studentFormControl.state.dirty ||
+                  studentFormControl.state.touched))
+            ">
+                        <span *ngIf="studentFormControl.state.errors?.['required']" class="errmsg">
+                            <small><span>state is required</span><i class="fas fa-exclamation-circle ps-2"></i></small>
+                        </span>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-12 col-md-5 px-3">
+                <mat-form-field appearance="outline">
+                    <mat-label>Zip-Code</mat-label>
+                    <input autocomplete="off" matInput placeholder="" formControlName="zipcode" />
+                    <mat-error *ngIf="
+              submitted ||
+              (studentFormControl.zipcode.invalid &&
+                (studentFormControl.zipcode.dirty ||
+                  studentFormControl.zipcode.touched))
+            " class="d-flex justify-content-evenly align-items-center">
+                        <span *ngIf="studentFormControl.zipcode.errors?.['required']" class="errmsg">
+                            <small><span>zipcode is required</span><i
+                                    class="fas fa-exclamation-circle ps-2"></i></small>
+                        </span>
+                        <span *ngIf="studentFormControl.zipcode.errors?.['minlength']" class="errmsg">
+                            <small><span>Use 6 Num</span><i class="fas fa-exclamation-circle ps-2"></i></small>
+                        </span>
+                        <span *ngIf="studentFormControl.zipcode.errors?.['maxlength']" class="errmsg">
+                            <small><span>DontUse 6+ Num</span><i class="fas fa-exclamation-circle ps-2"></i></small>
+                        </span>
+                        <span *ngIf="studentFormControl.zipcode.errors?.['pattern']" class="errmsg">
+                            <small><span>Number Only</span><i class="fas fa-exclamation-circle ps-2"></i></small>
+                        </span>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-0 col-md-1"></div>
+            <div class="col-sm-12 col-md-5 px-3">
+                <mat-form-field appearance="outline">
+                    <mat-label>country</mat-label>
+                    <input autocomplete="off" matInput placeholder="" formControlName="country" />
+                    <mat-error *ngIf="
+              submitted ||
+              (studentFormControl.country.invalid &&
+                (studentFormControl.country.dirty ||
+                  studentFormControl.country.touched))
+            ">
+                        <span *ngIf="studentFormControl.country.errors?.['required']" class="errmsg">
+                            <small><span>country is required</span><i
+                                    class="fas fa-exclamation-circle ps-2"></i></small>
+                        </span>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="col-12 ps-5">
+            <label for="file-upload" class="custom-file-upload">
+                <i class="fas fa-cloud-upload-alt"></i>&nbsp; Student Image Upload
+            </label>
+            <input id="file-upload" #file type="file" (change)="onFile($event)" />
+
+            <i class="fas fa-times ms-3 text-danger" style="font-size: 22px" (click)="imgDel()"
+                *ngIf="studentFormControl.img.value"></i>
+        </div>
+
+        <div class="img ms-5 mt-3">
+            <div class="img-content" (click)="file.click()">
+                <h5>No File</h5>
+                <img *ngIf="studentFormControl.img.value" [src]="studentFormControl.img.value" width="200" height="200"
+                    class="upimgup" />
+            </div>
+        </div>
+        <div class="radio row">
+            <div class="mt-2 me-2 col-sm-12 p-3">
+                <h3>Gender</h3>
+            </div>
+            <div class="d-flex ms-3">
+                <div class="wrapper me-3 col-4">
+                    <input class="form-check-input me-3" type="radio" id="radioBtnOne" name="gender"
+                        formControlName="gender" value="male" />
+                    <label class="form-check-label" for="radioBtnOne"> Male </label>
+                </div>
+                <div class="wrapper col-4">
+                    <input class="form-check-input me-3" type="radio" id="RadioBtnTwo" value="female"
+                        formControlName="gender" name="gender" />
+                    <label class="form-check-label" for="RadioBtnTwo"> Female </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <button [ngClass]="{ 'cancel': studentForm.invalid, 'submit': studentForm.valid }" type="submit">
+            {{ action === "edit" ? "Update" : "Submit" }}
+        </button>
+        <button class="gfg-submit-btn2 my-4 ms-5" type="button" (click)="closeModal()">
+            Cancel
+        </button>
+    </div>
+    <br />
+</form>

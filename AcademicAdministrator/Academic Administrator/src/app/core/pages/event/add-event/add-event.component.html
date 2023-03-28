@@ -1,0 +1,59 @@
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        <div class="page-header">
+            <h4>Add Event</h4>
+        </div>
+
+        <div class="sectionOne">
+            <h6 class="mb-4">Add Event</h6>
+
+            <div class="sectionOne-header" [formGroup]="eventForm">
+                <div class="row">
+                    <div class="col-12 col-md-5">
+                        <mat-form-field appearance="outline">
+                            <mat-label class="m-0 p-0">Event Name</mat-label>
+                            <div class="sectionOne-header__form">
+                                <input matInput placeholder="Some Event" formControlName="eventName"
+                                    autocomplete="off" />
+                                <i class="fas fa-pen"></i>
+                            </div>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-1"></div>
+                    <div class="col-12 col-md-5">
+                        <mat-form-field appearance="fill" class="example-full-width">
+                            <mat-label>Choose a date</mat-label>
+                            <input matInput [matDatepicker]="picker" formControlName="eventDate"
+                                (dateInput)="getDate($event)" />
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker touchUi #picker></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="container-fluid sectionOne-body">
+                    <angular-editor [placeholder]="'Enter text here...'" formControlName="eventDesc"
+                        [config]="config"></angular-editor>
+                </div>
+                <div class="button-div">
+                    <button mat-raised-button color="primary" (click)="onSubmit()" type="submit">
+                        Submit
+                    </button>
+                </div>
+            </div>
+            <div *ngIf="
+          eventForm.controls.eventName.value ||
+          eventForm.controls.eventDesc.value
+        ">
+                <p>Event Name : {{ eventForm.value.eventName }}</p>
+                <p>Event Date : {{ eventForm.value.eventDate }}</p>
+                <div>
+                    Event Description :
+                    <div [innerHtml]="sanitize(eventForm.value.eventDesc)"></div>
+                </div>
+            </div>
+            <br />
+        </div>
+
+        <br />
+    </div>
+</div>

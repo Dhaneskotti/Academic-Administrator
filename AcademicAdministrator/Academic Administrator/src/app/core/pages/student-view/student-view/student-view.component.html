@@ -1,0 +1,234 @@
+<div class="content container-fluid">
+    <div *ngFor="let data of viewDataStd; index as i">
+        {{data|json}}
+    </div>
+    <div class="page-header">
+        <h3 class="page-title">Welcome {{name}} {{b|json}} {{'fsf'}}</h3>
+        <div class="button">
+            <small>
+                <mat-form-field class="example-full-width search">
+                    <mat-label>REGISTER NO</mat-label>
+                    <input matInput placeholder="" value="" (keyup)="regSearch($event)">
+                </mat-form-field>
+            </small>
+            <button mat-fab class="primary">
+                <i class="fas fa-user-plus"></i>
+            </button>
+        </div>
+    </div>
+
+    <button class="btn-primary" (click)="xyz()">submit</button>
+
+    <div class="container-fluid sectionOne d-flex justify-content-center">
+        <div class="row top-row d-flex justify-content-center">
+            <div class="col-12 col-lg-3 stud-card">
+                <div class="row">
+                    <div class="stud--card__one__main">
+                        <div class="stud--card__one">
+                            <div class="stud--card__one__header">
+                                <div class="stud--card__one__header__username">
+                                    <h4>{{name}}</h4>
+                                </div>
+                                <div class="stud--card__one__header__userdeptname">
+                                    <h6>Computer Science</h6>
+                                </div>
+                            </div>
+                            <div class="stud--card__one__img">
+
+                                <div class="stud--card__one__img__box">
+                                    <img src={{img}} alt="student img">
+                                </div>
+                            </div>
+                            <p class="stud--card__one__reg">
+                                <span><i class="far fa-registered me-2"></i>{{id}}</span>
+                            </p>
+                            <div class="stud--card__one__mobile mb-3"><i class="fas fa-phone-alt me-2"></i>{{mobile}}
+                            </div>
+                            <div class="row">
+                                <div class="col-4 stud--card__one__day">
+                                    <h6>days</h6>
+                                    <span>50</span>
+                                </div>
+                                <div class="col-4 stud--card__one__day">
+                                    <h6>presnt</h6>
+                                    <span>40</span>
+                                </div>
+                                <div class="col-4 stud--card__one__day">
+                                    <h6>absent</h6>
+                                    <span>10</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="stud--card__two">
+                        <div class="stud--card__two__content">
+                            <h5>
+                                Attendence Percentage
+                            </h5>
+                            <div id="chart2" class="h-200 w-100">
+                                <apx-chart [series]="chartOptions2.series_2!" [chart]="chartOptions2.chart!"
+                                    [labels]="chartOptions2.labels!" [fill]="chartOptions2.fill!"
+                                    [dataLabels]="chartOptions2.dataLabels!"
+                                    [responsive]="chartOptions2.responsive!"></apx-chart>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-8 stud--detail__main common">
+                <div class="stud--detail__content">
+                    <div class="stud--detail__content__header">
+                        <h5>About Me</h5>
+                    </div>
+                    <div class="stud--detail__content__field">
+                        <div class="stud--detail__content__field__data">
+                            <div class="row">
+                                <div class="col-12 col-sm-6 col-xl-4">
+                                    <h6>Full Name</h6>
+                                    <p>{{name}}</p>
+                                </div>
+                                <div class="col-12 col-sm-6 col-xl-4">
+                                    <h6>Mobile</h6>
+                                    <p>{{mobile}}</p>
+                                </div>
+                                <div class="col-12 col-sm-6 col-xl-4">
+                                    <h6>E-Mail</h6>
+                                    <p>{{mail}}</p>
+                                </div>
+                                <div class="col-12 col-sm-6 col-xl-4">
+                                    <h6>D-O-B</h6>
+                                    <p>{{dob}}</p>
+                                </div>
+                                <div class="col-12 col-sm-6 col-xl-4">
+                                    <h6>Gender</h6>
+                                    <p>{{gen}}</p>
+                                </div>
+                                <div class="col-12 col-sm-6 col-xl-4">
+                                    <h6>Department</h6>
+                                    <p>{{dept}}</p>
+                                </div>
+                                <div class="col-12 col-sm-6 col-xl-4">
+                                    <h6>Blood Group</h6>
+                                    <p>O Positive</p>
+                                </div>
+                                <div class="col-12 col-sm-6 col-xl-4">
+                                    <h6>Father Name</h6>
+                                    <p>{{fatherName}}</p>
+                                </div>
+                                <div class="col-12 col-sm-6 col-xl-4">
+                                    <h6>Father Mobile</h6>
+                                    <p>{{fatherMobile}}</p>
+                                </div>
+                                <div class="col-12 col-sm-6 col-xl-4">
+                                    <h6>Father Occupation</h6>
+                                    <p>{{fatherOccupation}}</p>
+                                </div>
+                                <div class="col-12 col-sm-6 col-xl-4">
+                                    <h6>Mother Name</h6>
+                                    <p>{{motherName}}</p>
+                                </div>
+                                <div class="col-12 col-sm-6 col-xl-4">
+                                    <h6>Mother Mobile</h6>
+                                    <p>{{motherMobile}}</p>
+                                </div>
+                                <div class="col-12 col-sm-6 col-xl-4">
+                                    <h6>Mother Occupation</h6>
+                                    <p>{{motherOccupation}}</p>
+                                </div>
+                                <div class="col-12 col-sm-6 col-xl-8">
+                                    <h6>Address</h6>
+                                    <p>{{add}}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit at necessitatibus, rem
+                            tempore
+                            nesciunt accusantium dolor dolores, distinctio consequatur consequuntur perspiciatis
+                            nihil soluta
+                            eveniet laborum facere, fuga Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                            Temporibus labore
+                            aspernatur esse cumque molestias pariatur itaque, adipisci sapiente iste dignissimos
+                            voluptatem. Harum
+                            saepe deserunt commodi animi iusto ipsum obcaecati incidunt?
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sectionTwo">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="Attendence">
+                    <h4>Attendence &nbsp; Calendar</h4>
+                    <br>
+
+                    <div class="row text-center">
+                        <div class="col-md-4">
+                            <div class="btn-group btn-group-sm">
+                                <div class="btn btn-primary" style="background-color: #2ec5a2;border: none;"
+                                    mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate"
+                                    (viewDateChange)="closeOpenMonthViewDay()">
+                                    Previous
+                                </div>
+                                <div class="btn btn-outline-secondary" style="background-color: #6C757D;
+                                  color: #fff;" mwlCalendarToday [(viewDate)]="viewDate">
+                                    Today
+                                </div>
+                                <div class="btn btn-primary" style="background-color: #2ec5a2;border: none;"
+                                    mwlCalendarNextView [view]="view" [(viewDate)]="viewDate"
+                                    (viewDateChange)="closeOpenMonthViewDay()">
+                                    Next
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <h5>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="btn-group btn-group-sm">
+                                <div class="btn btn-primary cal" (click)="setView(CalendarView.Month)"
+                                    [class.active]="view === CalendarView.Month">
+                                    Month
+                                </div>
+                                <div class="btn btn-primary cal" (click)="setView(CalendarView.Week)"
+                                    [class.active]="view === CalendarView.Week">
+                                    Week
+                                </div>
+                                <div class="btn btn-primary cal" (click)="setView(CalendarView.Day)"
+                                    [class.active]="view === CalendarView.Day">
+                                    Day
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div [ngSwitch]="view">
+                        <mwl-calendar-month-view *ngSwitchCase="CalendarView.Month" [viewDate]="viewDate"
+                            [events]="events" [refresh]="refresh" [activeDayIsOpen]="activeDayIsOpen"
+                            (dayClicked)="dayClicked($event.day)" (eventClicked)="handleEvent('Clicked', $event.event)"
+                            (eventTimesChanged)="eventTimesChanged($event)">
+                        </mwl-calendar-month-view>
+                        <mwl-calendar-week-view *ngSwitchCase="CalendarView.Week" [viewDate]="viewDate"
+                            [events]="events" [refresh]="refresh" (eventClicked)="handleEvent('Clicked', $event.event)"
+                            (eventTimesChanged)="eventTimesChanged($event)">
+                        </mwl-calendar-week-view>
+                        <mwl-calendar-day-view *ngSwitchCase="CalendarView.Day" [viewDate]="viewDate" [events]="events"
+                            [refresh]="refresh" (eventClicked)="handleEvent('Clicked', $event.event)"
+                            (eventTimesChanged)="eventTimesChanged($event)">
+                        </mwl-calendar-day-view>
+                    </div>
+                    <br /><br /><br />
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Footer</p>
+    </footer>

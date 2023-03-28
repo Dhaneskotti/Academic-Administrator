@@ -1,0 +1,57 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+
+
+$base-color: #696cff;
+$p-background:#e7ebf0;
+* {
+     ::-webkit-scrollbar {
+        width: 7px;
+        height: 7px;
+    }
+    /* Track */
+     ::-webkit-scrollbar-track {
+        // box-shadow: inset -3px -3px 7px #ceced1, inset 3px 3px 5px #ceced1;
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        transition: 0.5s ease;
+    }
+    /* Handle */
+     ::-webkit-scrollbar-thumb {
+        background: #c5ced8;
+        border-radius: 10px;
+        transition: 0.5s ease;
+        // border: 1px solid #acb6c2;
+    }
+    /* Handle on hover */
+     ::-webkit-scrollbar-thumb:hover {
+        background: $base-color;
+        transition: 0.5s ease;
+    }
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@import "~@mobiscroll/angular/dist/css/mobiscroll.scss";
+
+
+
+
+
+
+
+.modal-dialog {
+	z-index: 9999;
+}

@@ -1,0 +1,109 @@
+<div class="sidebar" id="sidebar">
+    <!-- <div class="sidebar-inner slimscroll"> -->
+    <div class="sidebar-inner">
+        <div id="sidebar-menu" class="sidebar-menu">
+            <ul>
+                <li class="menu-title">
+                </li>
+                <li class="submenu" [class.active]="dash" (click)="onDash()">
+                    <a href="javascript:void(0)"><i class="fas fa-tasks-alt"></i> <span> Dashboard</span> <span
+                            class="menu-arrow"></span></a>
+                    <ul>
+                        <li><a [routerLinkActive]="['active']" routerLink="/page/dashboard/admin">Admin Dashboard</a>
+                        </li>
+                        <!-- <li><a [routerLinkActive]="['active']" routerLink="/page/dashboard/teac">Teacher Dashboard</a></li>
+                        <li><a [routerLinkActive]="['active']" routerLink="/page/dashboard/stud">Student Dashboard</a></li> -->
+                    </ul>
+                </li>
+                <li class="submenu" [class.active]="stud" (click)="onStud()">
+                    <a href="javascript:void(0)"><i class="fas fa-user-graduate"></i> <span> Students</span> <span
+                            class="menu-arrow"></span></a>
+                    <ul>
+                        <li><a [routerLinkActive]="['active']" routerLink="/page/student/stud-list">Student List</a>
+                        </li>
+                        <li><a [routerLinkActive]="['active']" routerLink="/page/student/stud-view">Student View</a>
+                        </li>
+                        <!-- <li><a [routerLinkActive]="['active']" routerLink="/page/student/stud-add">Student Add</a></li> -->
+                    </ul>
+                </li>
+                <li class="submenu" [class.active]="teach" (click)="onTeach()">
+                    <a href="javascript:void(0)"><i class="fas fa-chalkboard-teacher"></i> <span> Teachers</span> <span
+                            class="menu-arrow"></span></a>
+                    <ul>
+                        <li><a [routerLinkActive]="['active']" routerLink="/page/teacher/teach-list">Teacher List</a>
+                        </li>
+                        <li><a [routerLinkActive]="['active']" routerLink="/page/teacher/teach-view">Teacher View</a>
+                        </li>
+                        <!-- <li><a [routerLinkActive]="['active']" routerLink="/page/teacher/teach-add">Teacher Add</a></li> -->
+                    </ul>
+                </li>
+                <li class="submenu" [class.active]="dept" (click)="onDept()">
+                    <a href="javascript:void(0)"><i class="fas fa-building"></i> <span> Departments</span> <span
+                            class="menu-arrow"></span></a>
+                    <ul>
+                        <li><a [routerLinkActive]="['active']" routerLink="/page/department/dept-list">Department
+                                List</a></li>
+                        <!-- <li><a [routerLinkActive]="['active']" routerLink="/page/department/dept-add">Department Add</a></li> -->
+                    </ul>
+                </li>
+                <li class="submenu" [class.active]="attd" (click)="onAttd()">
+                    <a href="javascript:void(0)"><i class="fas fa-pen"></i><span> Attendence</span> <span
+                            class="menu-arrow"></span></a>
+                    <ul>
+                        <li><a [routerLinkActive]="['active']" routerLink="/page/attendence/take-atte">Take
+                                Attendence</a></li>
+                        <li><a [routerLinkActive]="['active']" routerLink="/page/attendence/view-atte">View
+                                Attendence</a></li>
+                    </ul>
+                </li>
+                <li class="submenu" [class.active]="event" (click)="onEvent()">
+                    <a href="javascript:void(0)"><i class="fas fa-calendar"></i> <span> Event</span> <span
+                            class="menu-arrow"></span></a>
+                    <ul>
+                        <li><a [routerLinkActive]="['active']" routerLink="/page/event/add-event">Add Event</a></li>
+                        <li><a [routerLinkActive]="['active']" routerLink="/page/event/view-event">View Event</a></li>
+                    </ul>
+                </li>
+                <!-- <li class="submenu" [class.active]="subj" (click)="onSubj()">
+                    <a href="#"><i class="fas fa-book-reader"></i> <span> Subjects</span> <span class="menu-arrow"></span></a>
+                    <ul>
+                        <li><a href="subjects.html">Subject List</a></li>
+                        <li><a href="add-subject.html">Subject Add</a></li>
+                        <li><a href="edit-subject.html">Subject Edit</a></li>
+                    </ul>
+                </li>
+                <li class="menu-title">
+                    <span>Management</span>
+                </li>
+                <li>
+                    <a href="fees.html"><i class="fas fa-comment-dollar"></i> <span>Fees</span></a>
+                </li>
+                <li>
+                    <a href="event.html"><i class="fas fa-calendar-day"></i> <span>Events</span></a>
+                </li>
+                <li>
+                    <a href="time-table.html"><i class="fas fa-table"></i> <span>Time Table</span></a>
+                </li>
+                <li>
+                    <a href="library.html"><i class="fas fa-book"></i> <span>Library</span></a>
+                </li>
+                <li class="menu-title">
+                    <span>Pages</span>
+                </li>
+                <li class="submenu">
+                    <a href="#"><i class="fas fa-shield-alt"></i> <span> Authentication </span> <span class="menu-arrow"></span></a>
+                    <ul>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="register.html">Register</a></li>
+                        <li><a href="forgot-password.html">Forgot Password</a></li>
+                        <li><a href="error-404.html">Error Page</a></li>
+                    </ul>
+                </li>
+                <li class="mb-5">
+                    <a href="blank-page.html"><i class="fas fa-file"></i> <span>Blank Page</span></a>
+                </li> -->
+
+            </ul>
+        </div>
+    </div>
+</div>

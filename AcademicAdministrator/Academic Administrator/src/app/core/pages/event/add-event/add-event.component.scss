@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300&display=swap");
+$base-color: #696cff;
+$p-background: #ecf0f4;
+$base-color: #696cff;
+
+.admin-content {
+  background: linear-gradient(
+      317.7deg,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(255, 255, 255, 0.4) 105.18%
+    ),
+    #e7ebf0;
+  background-blend-mode: soft-light, normal;
+  box-shadow: -5px -5px 10px #fafbff, 5px 5px 10px #a6abbd;
+  border-radius: 10px;
+  min-height: 80vh;
+  border-radius: 30px;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+}
+.sectionOne {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  height: auto;
+  transition: 0.5s ease-in-out !important;
+  box-shadow: -1px -1px 2px #eaeef2, 0px 4px 5px #d7dcdf;
+  &:hover {
+    box-shadow: 0 2px 12px -3px rgb(0 0 0 / 50%);
+    transition: 0.3s ease-in-out;
+  }
+  .button-div {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+    padding: 0 10px;
+  }
+  button {
+    background-color: #18aefa;
+    border: none;
+    margin: right;
+    width: 150px;
+    height: 45px;
+
+    &:hover {
+      background-color: $base-color;
+    }
+  }
+  &-header {
+    .row {
+      display: flex;
+      justify-content: center;
+    }
+
+    & mat-form-field {
+      width: 100%;
+    }
+
+    & mat-label {
+      vertical-align: baseline;
+    }
+
+    &__form {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+
+      & i {
+        text-align: center;
+      }
+    }
+  }
+  & .sectionOne-body {
+    & mat-form-field {
+      width: 100%;
+    }
+  }
+}
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: none !important;
+}
+.header {
+  margin-top: 100px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.html-header {
+  margin: 15px 0 5px;
+}
+.html {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 0.5rem;
+  background-color: #f1f1f1;
+  min-height: 20px;
+  max-height: 10rem;
+  overflow: auto;
+}
